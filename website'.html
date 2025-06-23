@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Malik Mohaman</title>
+  <style>.notes-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.notes-section textarea {
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.notes-section button {
+  background: #1a1a2e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.notes-section button:hover {
+  background: #34495e;
+}
+
+#status {
+  color: green;
+  margin-top: 10px;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #0f2027);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      color: #333;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: rgba(255,255,255,0.95);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .text-content {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .photo {
+      flex-shrink: 0;
+    }
+
+    .photo img {
+      width: 250px;
+      height: 250px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      color: #1a1a2e;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      color: #1a1a2e;
+      margin-top: 1.5rem;
+    }
+
+    ul {
+      margin-left: 1.2rem;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .photo img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <div class="container">
+    <div class="text-content">
+      <h1>Malik Mohaman</h1>
+      <p>Hello! I'm Malik, passionate about crypto trading, video editing, and online opportunities. This is my personal space on the web!</p>
+
+      <h2>Hobbies</h2>
+      <ul>
+        <li>Crypto and Futures Trading</li>
+        <li>Video Editing</li>
+        <li>Gaming (PUBG Mobile)</li>
+        <li>Creating YouTube Shorts</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:malikmohaman28@gmail.com">malikmohaman28@gmail.com</a></p>
+      <p>Instagram/Threads: <a href="https://www.threads.com/@mohamanmalik" target="_blank">@mohamanmalik</a></p>
+      <p>Facebook: <a href="https://facebook.com/malik.mohaman.28" target="_blank">facebook.com/your-profile</a></p>
+    </div>
+
+    <div class="photo">
+      <img src="photo.jpg" alt="Malik's Photo">
+    </div>
+  </div>
+  <section class="notes-section">
+  <h2>📓 My Notes</h2>
+  <textarea id="noteBox" placeholder="Write something..."></textarea>
+  <button onclick="saveNote()">💾 Save Note</button>
+  <p id="status"></p>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Malik Mohaman. All rights reserved.</p>
+  </footer>
+<script>
+  const noteBox = document.getElementById("noteBox");
+  const status = document.getElementById("status");
+
+  // Load saved note
+  window.onload = () => {
+    noteBox.value = localStorage.getItem("myNote") || "";
+  };
+
+  // Save note
+  function saveNote() {
+    localStorage.setItem("myNote", noteBox.value);
+    status.innerText = "✅ Note saved!";
+    setTimeout(() => status.innerText = "", 2000);
+  }
+</script>
+
+</body>
+</html>
